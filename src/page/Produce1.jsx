@@ -121,7 +121,7 @@ const Produce1 = () => {
     <>
       <MainSt>
         {/* {isLoading ? ( */}
-        {age2 >= 40 && moreMenu ? (
+        {age2 == "40~50" && moreMenu ? (
           <>
             <Where where="3" />
             <P margin="8rem 0 2.5rem  0rem" size={false}>
