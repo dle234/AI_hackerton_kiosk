@@ -83,31 +83,34 @@ const Produce1 = () => {
   //     return getProducts();
   //   });
   const [loading, setLoading] = useState(false);
-  const age = localStorage.getItem(0)
-    ? parseInt(localStorage.getItem(0).replace(" ", ""))
-    : 0;
-  const gender = localStorage.getItem(1)
-    ? localStorage.getItem(1)[0] == "m"
+  const age = localStorage.getItem("age") ? localStorage.getItem("age") : 0;
+  const gender = localStorage.getItem("gender")
+    ? localStorage.getItem("gender") == "0"
       ? "남자"
       : "여자"
     : "-";
   const change = (age) => {
-    if (10 <= age && age < 20) {
-      return 10;
-    } else if (20 <= age && age < 30) {
-      return 20;
-    } else if (30 <= age && age < 40) {
-      return 30;
-    } else if (40 <= age && age < 50) {
-      return 40;
-    } else if (50 <= age && age < 60) {
-      return 50;
-    } else if (60 <= age && age < 70) {
-      return 60;
-    } else {
-      return 30;
-    }
+    if (age == 10) return 10;
+    else if (age == 2030) return "20~30";
+    else if (age == 4050) return "40~50";
   };
+
+  //     if (10 <= age && age < 20) {
+  //       return 10;
+  //     } else if (20 <= age && age < 30) {
+  //       return 20;
+  //     } else if (30 <= age && age < 40) {
+  //       return 30;
+  //     } else if (40 <= age && age < 50) {
+  //       return 40;
+  //     } else if (50 <= age && age < 60) {
+  //       return 50;
+  //     } else if (60 <= age && age < 70) {
+  //       return 60;
+  //     } else {
+  //       return 30;
+  //     }
+
   const age2 = change(age);
   const [moreMenu, setMoreMenu] = useState(true);
   const more = () => {

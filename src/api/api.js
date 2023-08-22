@@ -39,6 +39,7 @@ export const sendImageToAI = async (imageFile) => {
   formData.append("image", imageFile);
 
   const response = await fetch(
+    // ai 백엔드 배포링크
     "https://port-0-ai-drf-uei072flawmy4wv.gksl2.cloudtype.app/process-image/",
     {
       method: "POST",
@@ -50,17 +51,22 @@ export const sendImageToAI = async (imageFile) => {
     console.log("AI Result:", data); // AI 모델에서 반환한 결과 출력
     //   const trimStr = data.split(" ").join("");
     let i = 0;
-    Object.keys(data).forEach(function (v) {
-      localStorage.setItem(i, data[v]);
-      i++;
-      console.log(data[v]);
-    });
+    // Object.keys(data).forEach(function (v) {
+    //   localStorage.setItem(i, data[v]);
+    //   i++;
+    //   console.log(data[v]);
+    // });
+
+    localStorage.setItem("age", data.age);
+    localStorage.setItem("gender", data.gender);
+    localStorage.setItem("height", data.height);
     //   window.location.href = "/selectPack";
   } else {
     console.error("인식에 실패했어요");
-    localStorage.setItem(0, "30");
-    localStorage.setItem(1, "m");
-    //   window.location.href = "/";
+
+    // localStorage.setItem(0, "30");
+    // localStorage.setItem(1, "m");
+    // window.location.href = "/error";
   }
 
   //  if (response.ok) {

@@ -144,7 +144,8 @@ const Camera = () => {
       <Div>
         <P margin="7rem 0 3rem 0rem">
           안녕하세요 <br />
-          아래 버튼을 눌러주세요
+          아래 버튼을 누르면 사진이 <br />
+          찍히고 주문이 시작돼요
         </P>
         <Img>
           <img

@@ -13,6 +13,7 @@ import Produce4 from "./page/Produce4";
 import End from "./page/End";
 import Loading from "./page/Loading";
 import Produce22 from "./page/Produce22";
+import Error from "./page/Error";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path={routes.produce4} element={<Produce4 />} />
         <Route path={routes.end} element={<End />} />
         <Route path={routes.loading} element={<Loading />} />
+        <Route path="/error" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );

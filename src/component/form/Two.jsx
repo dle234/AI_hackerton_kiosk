@@ -26,6 +26,7 @@ const Two = ({ srcl, srcr, routel, router }) => {
         <P margin="4rem 0 4rem 0rem">
           반가워요 <br />
           주문을 시작할게요
+          <br />둘 중에 하나를 눌러주세요
         </P>
         <Div>
           <img

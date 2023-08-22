@@ -137,7 +137,7 @@ const Produce2 = () => {
   };
   const handleButtonClick2 = (buttonId) => {
     console.log(buttonId);
-    setSweetActiveBtn(buttonId == activeBtn ? null : buttonId);
+    setSweetActiveBtn(buttonId == sweetActiveBtn ? null : buttonId);
   };
 
   return (
@@ -184,23 +184,23 @@ const Produce2 = () => {
           <p style={{ fontSize: "17px", margin: "0.5rem 0" }}>당도</p>
           <Sweet>
             <Btn2
-              key="1"
-              background={`${1 === sweetActiveBtn ? "active" : ""}`}
-              onClick={() => handleButtonClick2(1)}
+              key="3"
+              background={`${3 === sweetActiveBtn ? "active" : ""}`}
+              onClick={() => handleButtonClick2(3)}
             >
               0%
             </Btn2>
             <Btn2
-              key="2"
-              background={`${2 === sweetActiveBtn ? "active" : ""}`}
-              onClick={() => handleButtonClick2(2)}
+              key="4"
+              background={`${4 === sweetActiveBtn ? "active" : ""}`}
+              onClick={() => handleButtonClick2(4)}
             >
               30%
             </Btn2>
             <Btn2
-              key="3"
-              background={`${3 === sweetActiveBtn ? "active" : ""}`}
-              onClick={() => handleButtonClick2(3)}
+              key="5"
+              background={`${5 === sweetActiveBtn ? "active" : ""}`}
+              onClick={() => handleButtonClick2(5)}
             >
               50%
             </Btn2>
