@@ -66,7 +66,7 @@ export const sendImageToAI = async (imageFile) => {
 
     // localStorage.setItem(0, "30");
     // localStorage.setItem(1, "m");
-    // window.location.href = "/error";
+    window.location.href = "/error";
   }
 
   //  if (response.ok) {
