@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Loading = () => {
   const navigate = useNavigate();
-  setTimeout(() => navigate(routes.selectPack), 3000);
+  setTimeout(() => navigate(routes.selectPack), 4000);
   const Img = styled.div`
     display: flex;
     justify-content: center;
