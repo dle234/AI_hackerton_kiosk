@@ -152,7 +152,7 @@ const Camera = () => {
 
         <canvas
           id="canvas"
-          width="1024px"
+          width="311px"
           //폰 너비로 바꾸자~~~
           height="667px"
           style={{ display: CanvasState }}
