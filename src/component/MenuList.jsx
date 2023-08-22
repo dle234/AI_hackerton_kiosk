@@ -51,7 +51,5 @@ const MenuList = ({ menudata }) => {
     </MenuSt>
   );
 };
-{
-}
 
 export default MenuList;
