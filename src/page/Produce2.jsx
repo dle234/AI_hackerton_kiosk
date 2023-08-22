@@ -39,9 +39,9 @@ const Box = styled.div`
   border: 1px solid #eef1f0;
   border-radius: 8px;
 
-  position: absolute;
-  z-index: 100;
-  left: 0.8rem;
+  /* position: absolute;
+  z-index: 100; */
+  transform: translateX(-1.3rem);
 
   padding: 0 1rem;
 `;
@@ -133,11 +133,11 @@ const Produce2 = () => {
   const [sweetActiveBtn, setSweetActiveBtn] = useState(null);
 
   const handleButtonClick = (buttonId) => {
-    setActiveBtn(buttonId === activeBtn ? null : buttonId);
+    setActiveBtn(buttonId == activeBtn ? null : buttonId);
   };
   const handleButtonClick2 = (buttonId) => {
     console.log(buttonId);
-    setSweetActiveBtn(buttonId === activeBtn ? null : buttonId);
+    setSweetActiveBtn(buttonId == activeBtn ? null : buttonId);
   };
 
   return (

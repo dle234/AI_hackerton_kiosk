@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { setBackend } from "@tensorflow/tfjs";
 // import { getProducts } from "../api/api";
+import OldMenu from "../component/form/OldMenu";
 export const Bottom = styled.div`
   width: 375px;
   height: 116px;
@@ -18,7 +19,7 @@ export const Bottom = styled.div`
   border-radius: 10px 10px 10px 0px;
 
   position: fixed;
-  left: 0;
+  transform: translateX(-2rem);
   bottom: 0;
 
   z-index: 1000;
@@ -47,7 +48,18 @@ const Button = styled.button`
     }
   }
 `;
-
+const Button2 = styled.button`
+  background: rgba(68, 96, 239, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  width: 300px;
+  height: 53px;
+  color: white;
+  font-size: 19px;
+  line-height: 1.5;
+  /* transform: translateX(-0.2rem); */
+  margin-top: 5rem;
+`;
 const data = [
   {
     productName: "카페라떼",
@@ -70,55 +82,70 @@ const Produce1 = () => {
   //   const { data, error, isLoading } = useQuery(["product"], () => {
   //     return getProducts();
   //   });
-  const [old, setOld] = useState(null);
-  const [gen, setGen] = useState(null);
   const [loading, setLoading] = useState(false);
-  const age = localStorage.getItem(0);
-  const gender = localStorage.getItem(1)[0] == "m" ? "남자" : "여자";
-
-  useEffect(() => {
-    setGen(gender);
-    if (10 <= age < 20) {
-      setOld(10);
-    } else if (20 <= age < 30) {
-      setOld(20);
-    } else if (30 <= age < 40) {
-      setOld(30);
-    } else if (40 <= age < 50) {
-      setOld(40);
-    } else if (50 <= age < 60) {
-      setOld(50);
+  const age = localStorage.getItem(0)
+    ? parseInt(localStorage.getItem(0).replace(" ", ""))
+    : 0;
+  const gender = localStorage.getItem(1)
+    ? localStorage.getItem(1)[0] == "m"
+      ? "남자"
+      : "여자"
+    : "-";
+  const change = (age) => {
+    if (10 <= age && age < 20) {
+      return 10;
+    } else if (20 <= age && age < 30) {
+      return 20;
+    } else if (30 <= age && age < 40) {
+      return 30;
+    } else if (40 <= age && age < 50) {
+      return 40;
+    } else if (50 <= age && age < 60) {
+      return 50;
+    } else if (60 <= age && age < 70) {
+      return 60;
     } else {
-      setOld(60);
+      return 30;
     }
-  }, [age, gender]);
-  //console.log(age, old);
+  };
+  const age2 = change(age);
+  const [moreMenu, setMoreMenu] = useState(true);
+  const more = () => {
+    setMoreMenu(false);
+  };
 
   return (
     <>
       <MainSt>
         {/* {isLoading ? ( */}
-        {loading ? (
-          <div>로딩중...</div>
+        {age2 >= 40 && moreMenu ? (
+          <>
+            <Where where="3" />
+            <P margin="8rem 0 2.5rem  0rem" size={false}>
+              먹고 싶은걸 골라서 눌러주세요
+            </P>
+            <OldMenu></OldMenu>
+            <Button2 onClick={more}>더 많은 메뉴를 볼래요</Button2>
+          </>
         ) : (
           <>
             <Where where="1" />
             <P margin="1.5rem 0 1.5rem  0rem" size={true}>
-              {` ${age}대 ${gender} 추천 메뉴에요`}
+              {` ${age2}대 ${gender} 추천 메뉴에요`}
               <br />
               {`메뉴를 골라서 넣어주세요`}
             </P>
             <MenuList menudata={data} />
+            <Bottom>
+              <Button>
+                <p>
+                  {0}원 {0}개
+                </p>
+                <p>다 골랐어요</p>
+              </Button>
+            </Bottom>
           </>
         )}
-        <Bottom>
-          <Button>
-            <p>
-              {0}원 {0}개
-            </p>
-            <p>다 골랐어요</p>
-          </Button>
-        </Bottom>
       </MainSt>
     </>
   );

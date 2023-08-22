@@ -5,12 +5,15 @@ import { useNavigate } from "react-router-dom";
 import routes from "../routes";
 import P from "../component/P";
 import { sendImageToAI } from "../api/api";
+import { useQuery } from "@tanstack/react-query";
 
 export const MainSt = styled.div`
   width: 311px;
   height: 667px;
   background-color: #ffffff;
   padding: 0 2rem 0 2rem;
+
+  margin: auto;
 `;
 const Img = styled.div`
   display: flex;
@@ -91,7 +94,29 @@ const Camera = () => {
 
     context.scale(-1, 1); // 좌우 반전
     context.translate(-1024, 0); // 좌우 반전
-    context.drawImage(video, 0, 0, "1024", "768");
+    //context.drawImage(video, 0, 0, "1024", "768");
+
+    const videoWidth = video.videoWidth;
+    const videoHeight = video.videoHeight;
+    const scale = Math.min(310 / videoWidth, 600 / videoHeight);
+    const scaledWidth = videoWidth * scale;
+    const scaledHeight = videoHeight * scale;
+    const offsetX = (310 - scaledWidth) / 2;
+    const offsetY = (600 - scaledHeight) / 2;
+
+    canvas.width = 310;
+    canvas.height = 600;
+    context.drawImage(
+      video,
+      0,
+      0,
+      videoWidth,
+      videoHeight,
+      offsetX,
+      offsetY,
+      scaledWidth,
+      scaledHeight
+    );
     canvas.toBlob((blob) => {
       //캔버스의 이미지를 파일 객체로 만드는 과정
       let file = new File([blob], "fileName.jpg", { type: "image/jpeg" });
@@ -111,7 +136,7 @@ const Camera = () => {
       track.stop();
     });
 
-    navigate(routes.selectPack);
+    navigate(routes.loading);
   };
 
   return (
@@ -155,7 +180,11 @@ const Camera = () => {
           width="311px"
           //폰 너비로 바꾸자~~~
           height="667px"
-          style={{ display: CanvasState }}
+          style={{
+            display: CanvasState,
+            position: "absolute",
+            left: "500px",
+          }}
         ></canvas>
         {/* {CanvasState === "none" ? ( */}
         <Btn>

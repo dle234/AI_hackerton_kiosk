@@ -20,6 +20,12 @@ const Where = ({ where }) => {
           <img src={`${process.env.PUBLIC_URL}/image/Group 71.jpg`} alt="2" />
         </>
       ) : null}
+      {where === "3" ? (
+        <>
+          {/* <Back />
+          <img src={`${process.env.PUBLIC_URL}/image/Group 71.jpg`} alt="2" /> */}
+        </>
+      ) : null}
     </Div>
   );
 };

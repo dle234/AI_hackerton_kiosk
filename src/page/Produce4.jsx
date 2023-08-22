@@ -5,6 +5,7 @@ import P from "../component/P";
 import { styled } from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import routes from "../routes";
+import Where from "../component/Where";
 
 const Button = styled.button`
   background: rgba(217, 217, 217, 1);
@@ -29,6 +30,7 @@ const Produce4 = () => {
   const navigate = useNavigate();
   return (
     <MainSt>
+      <Where></Where>
       <Back />
       <div
         style={{
