@@ -83,12 +83,12 @@ const Produce1 = () => {
   //     return getProducts();
   //   });
   const [loading, setLoading] = useState(false);
-  const age = localStorage.getItem("age") ? localStorage.getItem("age") : 0;
+  const age = localStorage.getItem("age") ? localStorage.getItem("age") : 2030;
   const gender = localStorage.getItem("gender")
     ? localStorage.getItem("gender") == "0"
       ? "남자"
       : "여자"
-    : "-";
+    : "남자";
   const change = (age) => {
     if (age == 10) return 10;
     else if (age == 2030) return "20~30";
@@ -116,7 +116,7 @@ const Produce1 = () => {
   const more = () => {
     setMoreMenu(false);
   };
-
+  console.log(age2);
   return (
     <>
       <MainSt>
