@@ -2,13 +2,18 @@
 
 ---
 
-배포한 내용!!! [혜윰](https://web-ai-hackerton-kiosk-619z9h2lllmfsoix.sel3.cloudtype.app/%5D).
+ '[혜윰](https://web-ai-hackerton-kiosk-619z9h2lllmfsoix.sel3.cloudtype.app/)' 이라는 키오스크 웹앱이며
+휴대폰에서 쉽게 사용해볼 수 있게 '370X670'기준으로 개발했습니다.
+기술스택 : react+spring+장고 + 주피터 노트북 
+장고에서 AI 모델을 올리고, 장고와 리액트 통신을 통해 이미지 파일을 AI 모델에 보내고 키,성별,나이 데이터를 받아와 나이에 따른 레이아웃 구성을 다르게 구현했습니다.
 
-## Table of Contents
+### 키오스크 기본 플로우
 
-In the project directory, you can run:
-
+먼저 주문하기 버튼을 누르면 사용자의 사진이 찍힘
+-> 해당 사진의 정보를 AI에서 분석하여 나이,성별,키를 얘측해 사용자에 맞는 키오스크 디자인 보여줌, -> 만약 사진이 잘못찍히면 다시 찍을 수 있게 간단한 에러 핸들링을 함. , 백엔드 통신을 통해 
 ### Background
+
+
 
 여기에는 해커톤 관련 얘끼,목표,기획
 
@@ -17,9 +22,9 @@ In the project directory, you can run:
 의존성 설치방법
 
 ```
-$ npm install --global standard-readme-spec
+$ npm i
 ```
 
 ### Contributors
 
-팀원소개
+팀원소개(깃허브 링크 불러오기)
