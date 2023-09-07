@@ -1,30 +1,62 @@
-# 2023-8-21~23 AI해커톤 프로젝트 혜윰 키오스크 개발
+# 혜윰 <AI를 활용한 맞춤형 키오스크>
 
----
+2023.8.21~23 aicoss 해커톤 프로젝트
 
- '[혜윰](https://web-ai-hackerton-kiosk-619z9h2lllmfsoix.sel3.cloudtype.app/)' 이라는 키오스크 웹앱이며
-휴대폰에서 쉽게 사용해볼 수 있게 '370X670'기준으로 개발했습니다.
-기술스택 : react+spring+장고 + 주피터 노트북 
-장고에서 AI 모델을 올리고, 장고와 리액트 통신을 통해 이미지 파일을 AI 모델에 보내고 키,성별,나이 데이터를 받아와 나이에 따른 레이아웃 구성을 다르게 구현했습니다.
+![15 브랜딩](https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/2f16198e-4396-4bbd-9fd8-d9e5dcd53d0e)
 
-### 키오스크 기본 플로우
+## 목차
 
-먼저 주문하기 버튼을 누르면 사용자의 사진이 찍힘
--> 해당 사진의 정보를 AI에서 분석하여 나이,성별,키를 얘측해 사용자에 맞는 키오스크 디자인 보여줌, -> 만약 사진이 잘못찍히면 다시 찍을 수 있게 간단한 에러 핸들링을 함. , 백엔드 통신을 통해 
-### Background
+- 배포 주소
+- 프로젝트 소개
+- 기술 스택
+- 서비스 아키텍쳐
+- 화면 구성
+- 주요 기능
+- 팀원 소개
 
+## 배포 주소
 
+<img src="https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/06c14626-3206-40ff-88f8-cb8f855cf67b" width="200" height="200"/>
+https://web-ai-hackerton-kiosk-619z9h2lllmfsoix.sel3.cloudtype.app
 
-여기에는 해커톤 관련 얘끼,목표,기획
+## 프로젝트 소개
 
-### Install
+혜윰은 인공지능을 활용하여 사용자의 연령, 성별에 맞는 맞춤형 키오스크 ui/ux 구성을 보여주는 서비스 입니다.
 
-의존성 설치방법
+## 기술 스택
 
-```
-$ npm i
-```
+### Front-end
 
-### Contributors
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"><img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"><img src="https://img.shields.io/badge/ReactRouter-CA4245?style=for-the-badge&logo=ReactRouter&logoColor=purple"><img src="https://img.shields.io/badge/webrtc-333333?style=for-the-badge&logo=webrtc&logoColor=white">
 
-팀원소개(깃허브 링크 불러오기)
+## 서비스 아키텍쳐
+
+![image 179](https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/8e94920e-ce69-4bda-b592-936f19170d41)
+
+## 화면구성
+
+### 기본 화면
+
+![기능 설명](https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/726ee2a5-ef9d-439a-9fdf-525d7723bcbc)
+
+### 40대 이하 플로우
+
+![기능 설명2](https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/2df264fe-7af7-4b20-98e9-0efa6025ffb6)
+
+### 40대 이상 플로우
+
+![4 2차 목표](https://github.com/dle234/AI_hackerton_kiosk/assets/108859281/c99af0cf-c241-41dd-83d8-d1f02e394918)
+
+## 주요기능
+
+- 첫 화면에서 주문 버튼을 누르면 사용자의 사진이 찍힙니다.
+- 해당 사진을 분석해 사용자의 연령대와 성별을 분석합니다.
+  - 40대 이하의 경우 : 해당 연령대와 성별을 고려하여 추천 메뉴를 보여줍니다. 온도, 당도 선택을 상세하게 할 수 있습니다.
+  - 40대 이상의 경우 : 친숙한 자판기 커피 디자인의 메뉴 선택지를 보여줍니다. 선택지가 직관적이고 간단하여 기본 구성보다 수월하게 주문할 수 있습니다.
+    아래 버튼('더 많은 메뉴를 볼래요')을 통해 기본 구성을 볼 수 있습니다.
+
+## 팀원소개
+
+| PM & DESIGN |   AI   |   FE   |   BE   |
+| :---------: | :----: | :----: | :----: |
+|   이시현    | 김다영 | 김가연 | 이승건 |
